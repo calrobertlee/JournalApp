@@ -16,6 +16,7 @@ struct Journal {
         entries.append(entry)
     }
     
+    // Chooses current journal entry.
     func openJournalEntry(_ entry: JournalEntry) {
 //        let chosenIndex = entries.index(of: entry)
         let chosenIndex = index(of: entry)
@@ -24,15 +25,18 @@ struct Journal {
         print("\(chosenIndex)")
     }
     
+    // temporary work around the allow for index to be returned.
     func index(of: JournalEntry) -> Int {
         return 0
     }
     
+    // initializer that creates a journal entry and adds it to the array.
     init() {
         let journalEntry = JournalEntry(title: "My Entry", entryText: "This is my journal entry.", date: Date(), id: 1)
         addJournalEntry(entry: journalEntry)
     }
     
+    // Journal Entry struct.
     struct JournalEntry: Identifiable {
         var title: String
         var entryText: String
