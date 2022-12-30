@@ -9,15 +9,15 @@ import SwiftUI
 
 
 class JournalEntryView {
-    private let model = Journal()
+    private let journal = Journal()
     
     var entries: Array<Journal.JournalEntry> {
-        return model.entries
+        return journal.entries
     }
     
     // MARK: - Intent(s)
 
     func choose(_ entry: Journal.JournalEntry) {
-        model.openJournalEntry(entry)
+        journal.openJournalEntry(entry)
     }
 }

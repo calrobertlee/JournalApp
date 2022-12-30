@@ -16,7 +16,7 @@ struct Journal {
     }
     
     func openJournalEntry(_ entry: JournalEntry) {
-        
+        print("it works!")
     }
     
     init() {

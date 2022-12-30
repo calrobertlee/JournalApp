@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct ContentView: View {
-    let journalEntryView = JournalEntryView()
+    let viewModel = JournalEntryView()
     let journal = Journal()
 
     var body: some View {
@@ -24,6 +24,8 @@ struct ContentView: View {
                     Text(entry.entryText)
                         .fontWeight(.light)
                         .foregroundColor(.gray)
+                }.onTapGesture {
+                    viewModel.choose(entry)
                 }
             }
         }
