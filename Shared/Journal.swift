@@ -9,10 +9,10 @@ import Foundation
 
 
 struct Journal {
-    var journalEntries = [JournalEntry]()
+    var entries = [JournalEntry]()
     
     mutating func addJournalEntry(entry: JournalEntry) {
-        journalEntries.append(entry)
+        entries.append(entry)
     }
     
     func openJournalEntry(_ entry: JournalEntry) {

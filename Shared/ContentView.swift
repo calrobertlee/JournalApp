@@ -17,7 +17,7 @@ struct ContentView: View {
             Text("Journal Entries")
                 .fontWeight(.bold)
                 .padding(.all, 20)
-            List(journal.journalEntries) { entry in
+            List(journal.entries) { entry in
                 VStack(alignment: .leading) {
                     Text(entry.title)
                         .fontWeight(.semibold)

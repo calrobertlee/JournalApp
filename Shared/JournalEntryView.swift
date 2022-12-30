@@ -11,7 +11,7 @@ import SwiftUI
 class JournalEntryView {
     private let model = Journal()
     
-    var journalEntries: Array<Journal.JournalEntry> {
+    var entries: Array<Journal.JournalEntry> {
         return model.journalEntries
     }
     
