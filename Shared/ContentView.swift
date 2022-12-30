@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
-    var journal = Journal()
+    let journalEntryView = JournalEntryView()
+    let journal = Journal()
 
     var body: some View {
         VStack {

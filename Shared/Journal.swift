@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Journal {
     var journalEntries = [JournalEntry]()
     
@@ -14,10 +15,14 @@ struct Journal {
         journalEntries.append(entry)
     }
     
+    func openJournalEntry(_ entry: JournalEntry) {
+        
+    }
+    
     init() {
-          let journalEntry = JournalEntry(title: "My Entry", entryText: "This is my journal entry.", date: Date(), id: 1)
-          addJournalEntry(entry: journalEntry)
-      }
+        let journalEntry = JournalEntry(title: "My Entry", entryText: "This is my journal entry.", date: Date(), id: 1)
+        addJournalEntry(entry: journalEntry)
+    }
     
     struct JournalEntry: Identifiable {
         var title: String
