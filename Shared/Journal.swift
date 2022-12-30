@@ -7,39 +7,19 @@
 
 import Foundation
 
-class Journal {
+struct Journal {
     var journalEntries = [JournalEntry]()
     
-    func addJournalEntry(entry: JournalEntry) {
+    mutating func addJournalEntry(entry: JournalEntry) {
         journalEntries.append(entry)
     }
     
-    func deleteJournalEntry(at index: Int) {
-        guard index >= 0 && index < journalEntries.count else {
-            return
-        }
-       
-        journalEntries.remove(at: index)
-    }
-
-    func updateJournalEntry(at index: Int, newEntry: JournalEntry) {
-        guard index < journalEntries.count else {
-            return
-        }
-        
-        journalEntries[index] = newEntry
-    }
+    init() {
+          let journalEntry = JournalEntry(title: "My Entry", entryText: "This is my journal entry.", date: Date(), id: 1)
+          addJournalEntry(entry: journalEntry)
+      }
     
-    func retrieveJournalEntry(withTitle title: String) -> JournalEntry? {
-        for entry in journalEntries {
-            if entry.title == title {
-                return entry
-            }
-        }
-        return nil
-    }
-
-    class JournalEntry: Identifiable {
+    struct JournalEntry: Identifiable {
         var title: String
         var entryText: String
         var date: Date
@@ -51,6 +31,7 @@ class Journal {
             self.date = date
             self.id = id
         }
-        let journalEntry = JournalEntry(title: "My Entry", entryText: "This is my journal entry.", date: Date(), id: 1)
     }
 }
+
+
