@@ -18,11 +18,10 @@ struct Journal {
     
     // Chooses current journal entry.
     func openJournalEntry(_ entry: JournalEntry) {
-//        let chosenIndex = entries.index(of: entry)
         let chosenIndex = index(of: entry)
         var chosenEntry = entries[chosenIndex]
         chosenEntry.isSelected.toggle()
-        print("\(chosenIndex)")
+        print("It works!!")
     }
     
     // temporary work around the allow for index to be returned.

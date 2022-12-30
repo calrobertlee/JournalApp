@@ -17,15 +17,17 @@ struct ContentView: View {
             Text("Journal Entries")
                 .fontWeight(.bold)
                 .padding(.all, 20)
-            List(journal.entries) { entry in
-                VStack(alignment: .leading) {
-                    Text(entry.title)
-                        .fontWeight(.semibold)
-                    Text(entry.entryText)
-                        .fontWeight(.light)
-                        .foregroundColor(.gray)
-                }.onTapGesture {
-                    viewModel.choose(entry)
+            NavigationView {
+                List(journal.entries) { entry in
+                    NavigationLink(destination: EntryView(entry: entry)) {
+                        VStack(alignment: .leading) {
+                            Text(entry.title)
+                                .fontWeight(.semibold)
+                            Text(entry.entryText)
+                                .fontWeight(.light)
+                                .foregroundColor(.gray)
+                        }
+                    }
                 }
             }
         }
@@ -36,7 +38,7 @@ struct EntryView: View {
     let entry: Journal.JournalEntry
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(entry.title)
                 .fontWeight(.semibold)
             Text(entry.entryText)
