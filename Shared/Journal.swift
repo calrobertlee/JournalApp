@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CloudKit
 
 
 struct Journal {
@@ -16,7 +17,15 @@ struct Journal {
     }
     
     func openJournalEntry(_ entry: JournalEntry) {
-        print("it works!")
+//        let chosenIndex = entries.index(of: entry)
+        let chosenIndex = index(of: entry)
+        var chosenEntry = entries[chosenIndex]
+        chosenEntry.isSelected.toggle()
+        print("\(chosenIndex)")
+    }
+    
+    func index(of: JournalEntry) -> Int {
+        return 0
     }
     
     init() {
@@ -29,6 +38,7 @@ struct Journal {
         var entryText: String
         var date: Date
         var id: Int
+        var isSelected: Bool = false
         
         init(title: String, entryText: String, date: Date, id: Int) {
             self.title = title

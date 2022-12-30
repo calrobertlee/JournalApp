@@ -32,6 +32,20 @@ struct ContentView: View {
     }
 }
 
+struct EntryView: View {
+    let entry: Journal.JournalEntry
+    
+    var body: some View {
+        VStack {
+            Text(entry.title)
+                .fontWeight(.semibold)
+            Text(entry.entryText)
+                .fontWeight(.light)
+                .foregroundColor(.gray)
+        }
+    }
+}
+
 
 
 
