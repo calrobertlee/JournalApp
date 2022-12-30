@@ -12,7 +12,7 @@ class JournalEntryView {
     private let model = Journal()
     
     var entries: Array<Journal.JournalEntry> {
-        return model.journalEntries
+        return model.entries
     }
     
     // MARK: - Intent(s)
