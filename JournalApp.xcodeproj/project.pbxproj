@@ -13,6 +13,8 @@
 		CE1A54B5295E6D2900515B7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A54A3295E6D1B00515B7E /* ContentView.swift */; };
 		CE1A54B6295E6D2900515B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1A54A4295E6D2900515B7E /* Assets.xcassets */; };
 		CE1A54B7295E6D2900515B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1A54A4295E6D2900515B7E /* Assets.xcassets */; };
+		CE1A54C1295E723000515B7E /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A54C0295E723000515B7E /* Journal.swift */; };
+		CE1A54C2295E723000515B7E /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A54C0295E723000515B7E /* Journal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		CE1A54A9295E6D2900515B7E /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1A54AF295E6D2900515B7E /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1A54B1295E6D2900515B7E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CE1A54C0295E723000515B7E /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1A54A2295E6D1B00515B7E /* JournalApp.swift */,
+				CE1A54C0295E723000515B7E /* Journal.swift */,
 				CE1A54A3295E6D1B00515B7E /* ContentView.swift */,
 				CE1A54A4295E6D2900515B7E /* Assets.xcassets */,
 			);
@@ -176,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1A54C1295E723000515B7E /* Journal.swift in Sources */,
 				CE1A54B4295E6D2900515B7E /* ContentView.swift in Sources */,
 				CE1A54B2295E6D2900515B7E /* JournalApp.swift in Sources */,
 			);
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1A54C2295E723000515B7E /* Journal.swift in Sources */,
 				CE1A54B5295E6D2900515B7E /* ContentView.swift in Sources */,
 				CE1A54B3295E6D2900515B7E /* JournalApp.swift in Sources */,
 			);
