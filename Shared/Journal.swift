@@ -31,7 +31,6 @@ class Journal {
     }
     
     func retrieveJournalEntry(withTitle title: String) -> JournalEntry? {
-
         for entry in journalEntries {
             if entry.title == title {
                 return entry
@@ -39,19 +38,13 @@ class Journal {
         }
         return nil
     }
-    
-    func saveJournalEntries() {
-//        let database = FirebaseDatabase.database().reference()
-//        database.child("JournalEntries").setValue(journalEntries)
-    }
-    
- 
-    
+
     class JournalEntry: Identifiable {
         var title: String
         var entryText: String
         var date: Date
         var id: Int
+        
         init(title: String, entryText: String, date: Date, id: Int) {
             self.title = title
             self.entryText = entryText

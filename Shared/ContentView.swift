@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var journal = Journal()
-    
+
     var body: some View {
         VStack {
             Text("Journal Entries")
                 .fontWeight(.bold)
                 .padding(.all, 20)
-            
             List(journal.journalEntries) { entry in
                 VStack(alignment: .leading) {
                     Text(entry.title)
@@ -24,12 +23,6 @@ struct ContentView: View {
                         .fontWeight(.light)
                         .foregroundColor(.gray)
                 }
-            }
-            
-            HStack {
-                TextField("New title", text: .constant(""))
-                
-                TextField("Entry text", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
             }
         }
     }
