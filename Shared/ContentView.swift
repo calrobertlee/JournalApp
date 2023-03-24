@@ -35,28 +35,41 @@ struct ContentView: View {
 }
 
 struct EntryView: View {
+    @State private var editedText: String
+    
     let entry: Journal.JournalEntry
     
+    init(entry: Journal.JournalEntry) {
+        self.entry = entry
+        self._editedText = State(initialValue: entry.entryText)
+    }
+    
     var body: some View {
-        VStack() {
+        VStack {
             Text(entry.title)
                 .fontWeight(.semibold)
                 .padding([.horizontal, .bottom], 10)
                 .frame(maxWidth: .infinity, alignment: .leading)
-//                .background(Color.red)
-            Text(entry.entryText)
-                .fontWeight(.light)
-                .foregroundColor(.gray)
+            
+            TextEditor(text: $editedText)
+                .foregroundColor(.black)
                 .padding([.horizontal, .bottom], 10)
-                .frame(maxWidth: .infinity, alignment: .leading)
-//                .background(Color.green)
-            Spacer()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            Button(action: {
+                let updatedEntry = Journal.JournalEntry(title: entry.title, entryText: editedText, date: entry.date, id: entry.id)
+                var journal = Journal()
+                journal.saveJournalEntry(updatedEntry)
+            }) {
+                Text("Save")
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(Color.blue)
+        .onAppear {
+            editedText = entry.entryText
+        }
     }
 }
-
 
 
 

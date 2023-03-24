@@ -16,12 +16,18 @@ struct Journal {
         entries.append(entry)
     }
     
+    // ChatGPT method for saving
+    mutating func saveJournalEntry(_ updatedEntry: JournalEntry) {
+       if let index = entries.firstIndex(where: { $0.id == updatedEntry.id }) {
+           entries[index] = updatedEntry
+       }
+    }
+       
     // Chooses current journal entry.
     func openJournalEntry(_ entry: JournalEntry) {
         let chosenIndex = index(of: entry)
         var chosenEntry = entries[chosenIndex]
         chosenEntry.isSelected.toggle()
-        print("It works!!")
     }
     
     // temporary work around the allow for index to be returned.
