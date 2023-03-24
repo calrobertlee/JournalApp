@@ -34,6 +34,7 @@ struct Journal {
         let journalEntry = JournalEntry(title: "My Entry", entryText: "This is my journal entry.", date: Date(), id: 1)
         addJournalEntry(entry: journalEntry)
     }
+    /// My guess is that the issue with the application stems from this initializer
     
     // Journal Entry struct.
     struct JournalEntry: Identifiable {
