@@ -35,26 +35,37 @@ struct ContentView: View {
 }
 
 struct EntryView: View {
-    let entry: Journal.JournalEntry
+    @State var entry: Journal.JournalEntry
+    @State var editedText: String = ""
     
     var body: some View {
-        VStack() {
-            Text(entry.title)
-                .fontWeight(.semibold)
-                .padding([.horizontal, .bottom], 10)
+        VStack {
+            TextField("Entry title", text: $entry.title)
+                .font(.title)
+                .padding([.bottom,.horizontal], 5)
                 .frame(maxWidth: .infinity, alignment: .leading)
-//                .background(Color.red)
-            Text(entry.entryText)
-                .fontWeight(.light)
-                .foregroundColor(.gray)
-                .padding([.horizontal, .bottom], 10)
-                .frame(maxWidth: .infinity, alignment: .leading)
-//                .background(Color.green)
-            Spacer()
+            
+            TextEditor(text: $entry.entryText)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            Button("Save") {
+                saveEntry()
+            }
+            .padding(.bottom, 10)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(Color.blue)
+        .padding(.horizontal, 10)
+        .onAppear {
+            editedText = entry.entryText
+        }
+        ///It's a way to set the initial value of editedText to the current value of entry.entryText so that the user can start editing from that point.
     }
+    
+    private func saveEntry() {
+       // Save the edited text to your data model
+       // For example, you could do something like:
+       entry.entryText = editedText
+   }
 }
 
 
