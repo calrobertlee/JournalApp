@@ -38,15 +38,27 @@ struct EntryView: View {
     let entry: Journal.JournalEntry
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack() {
             Text(entry.title)
                 .fontWeight(.semibold)
+                .padding([.horizontal, .bottom], 10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+//                .background(Color.red)
             Text(entry.entryText)
                 .fontWeight(.light)
                 .foregroundColor(.gray)
+                .padding([.horizontal, .bottom], 10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+//                .background(Color.green)
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background(Color.blue)
     }
 }
+
+
+
 
 
 
